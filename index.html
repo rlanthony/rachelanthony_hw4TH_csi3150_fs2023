@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Used Cars</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!--JS-->
+    <script src="./js/app.js" defer></script>
+    <script src="./js/usedCars.js"></script>
+  </head>
+  <body>
+    <!-- OVERALL LAYOUT: HEADER W/ TITLE -> FILTER SECTION -> CARS IN GRID FORMAT -->
+    <header class="title_container">
+      <h1 id="interface_title">Used Cars Available for Purchase</h1>
+    </header>
+
+    <div class="usedCarFilterAndInfo">
+      <div class="filter_container">
+        <!--  write filter logic -->
+        <div class="filterHeading">
+          <h1>Filter Search:</h1>
+        </div>
+
+        <!-- MIN/MAX CAR YEAR -->
+        <div id="yearFilter">
+          <h2>Car Year:</h2>
+          <!-- <form action="#" id="filterForm" method="post"></form> -->
+
+          <label for="minCarYear">Minimum Car Year: </label>
+          <input
+            type="text"
+            name="minCarYear"
+            id="minCarYear"
+            placeholder="Min"
+          />
+
+          <!-- <form action="#" method="post"></form> -->
+          <label for="maxCarYear">Maximum Car Year: </label>
+          <input
+            type="text"
+            name="maxCarYear"
+            id="maxCarYear"
+            placeholder="Max"
+          />
+        </div>
+
+        <!-- CAR MAKE -->
+        <div id="makeFilter">
+          <h2>Car Make:</h2>
+
+          <div class="makeFilterGrid">
+            <input
+              type="checkbox"
+              class="carMake"
+              name="Toyota"
+              id="Toyota"
+              value="Toyota"
+            />
+            <label for="Toyota">Toyota</label>
+
+            <input
+              type="checkbox"
+              class="carMake"
+              name="Honda"
+              id="Honda"
+              value="Honda"
+            />
+            <label for="Honda">Honda</label>
+
+            <input
+              type="checkbox"
+              class="carMake"
+              name="Ford"
+              id="Ford"
+              value="Ford"
+            />
+            <label for="Ford">Ford</label>
+
+            <input
+              type="checkbox"
+              class="carMake"
+              name="Nissan"
+              id="Nissan"
+              value="Nissan"
+            />
+            <label for="Nissan">Nissan</label>
+
+            <input
+              type="checkbox"
+              name="Chevrolet"
+              id="Chevrolet"
+              value="Chevrolet"
+              class="carMake"
+            />
+            <label for="Chevrolet">Chevrolet</label>
+
+            <input
+              type="checkbox"
+              class="carMake"
+              name="Volkswagen"
+              id="Volkswagen"
+              value="Volkswagen"
+            />
+            <label for="Volkswagen">Volkswagen</label>
+
+            <input
+              type="checkbox"
+              class="carMake"
+              name="Hyundai"
+              id="Hyundai"
+              value="Hyundai"
+            />
+            <label for="Hyundai">Hyundai</label>
+
+            <input
+              type="checkbox"
+              class="carMake"
+              name="Subaru"
+              id="Subaru"
+              value="Subaru"
+            />
+            <label for="Subaru">Subaru</label>
+
+            <input
+              type="checkbox"
+              class="carMake"
+              name="Mazda"
+              id="Mazda"
+              value="Mazda"
+            />
+            <label for="Mazda">Mazda</label>
+
+            <input
+              type="checkbox"
+              class="carMake"
+              name="Kia"
+              id="Kia"
+              value="Kia"
+            />
+            <label for="Kia">Kia</label>
+
+            <input
+              type="checkbox"
+              class="carMake"
+              name="Dodge"
+              id="Dodge"
+              value="Dodge"
+            />
+            <label for="Dodge">Dodge</label>
+
+            <input
+              type="checkbox"
+              name="Cadillac"
+              id="Cadillac"
+              value="Cadillac"
+              class="carMake"
+            />
+            <label for="Cadillac">Cadillac</label>
+
+            <input
+              type="checkbox"
+              class="carMake"
+              name="Jaguar"
+              id="Jaguar"
+              value="Jaguar"
+            />
+            <label for="Jaguar">Jaguar</label>
+
+            <input
+              type="checkbox"
+              class="carMake"
+              name="Tesla"
+              id="Tesla"
+              value="Tesla"
+            />
+            <label for="Tesla">Tesla</label>
+
+            <input
+              type="checkbox"
+              class="carMake"
+              name="Porsche"
+              id="Porsche"
+              value="Porsche"
+            />
+            <label for="Porsche">Porsche</label>
+
+            <input
+              type="checkbox"
+              class="carMake"
+              name="Lexus"
+              id="Lexus"
+              value="Lexus"
+            />
+            <label for="Lexus">Lexus</label>
+
+            <input
+              type="checkbox"
+              class="carMake"
+              name="BMW"
+              id="BMW"
+              value="BMW"
+            />
+            <label for="BMW">BMW</label>
+          </div>
+        </div>
+
+        <!-- MAX MILEAGE THRESHOLD -->
+        <div id="mileageFilter">
+          <h2>Car Mileage:</h2>
+
+          <div class="mileageRadioBtns">
+            <input
+              type="radio"
+              name="mileageThreshold"
+              id="under15000"
+              value="under15000"
+              class="mileage"
+            />
+            <label for="mileageThreshold">Under 15,000 Miles</label>
+            <br />
+            <input
+              type="radio"
+              name="mileageThreshold"
+              id="under30000"
+              value="under30000"
+              class="mileage"
+            />
+            <label for="mileageThreshold">Under 30,000 Miles</label>
+          </div>
+        </div>
+
+        <!-- MAX CAR PRICE -->
+        <div class="priceFilter">
+          <h2>Max Car Price:</h2>
+          <form action="#" method="post"></form>
+          <label for="maxPrice">Maximum Car Price: </label>
+          <input
+            type="text"
+            name="maxPrice"
+            id="maxPrice"
+            placeholder="Price"
+          />
+        </div>
+
+        <!-- CAR COLOR -->
+        <div class="colorFilter">
+          <h2>Car Color:</h2>
+
+          <div class="colorFilterGrid">
+            <input
+              type="checkbox"
+              class="carColor"
+              name="Silver"
+              id="Silver"
+              value="Silver"
+            />
+            <label for="Silver">Silver</label>
+
+            <input
+              type="checkbox"
+              class="carColor"
+              name="Black"
+              id="Black"
+              value="Black"
+            />
+            <label for="Black">Black</label>
+
+            <input
+              type="checkbox"
+              class="carColor"
+              name="White"
+              id="White"
+              value="White"
+            />
+            <label for="White">White</label>
+
+            <input
+              type="checkbox"
+              class="carColor"
+              name="Blue"
+              id="Blue"
+              value="Blue"
+            />
+            <label for="Blue">Blue</label>
+
+            <input
+              type="checkbox"
+              class="carColor"
+              name="Red"
+              id="Red"
+              value="Red"
+            />
+            <label for="Red">Red</label>
+
+            <input
+              type="checkbox"
+              class="carColor"
+              name="Gray"
+              id="Gray"
+              value="Gray"
+            />
+            <label for="Gray">Gray</label>
+
+            <input
+              type="checkbox"
+              class="carColor"
+              name="Green"
+              id="Green"
+              value="Green"
+            />
+            <label for="Green">Green</label>
+          </div>
+        </div>
+
+        <!-- SUBMIT BUTTON -->
+        <div class="submit_reset">
+          <button id="submitBtn" type="submit">SUBMIT</button>
+
+          <!-- RESET BUTTON -->
+          <button id="resetBtn" type="reset">RESET</button>
+        </div>
+      </div>
+
+      <div class="usedCarInfo">
+        <!-- div that will be used to store all product cards -->
+      </div>
+    </div>
+  </body>
+</html>
